@@ -1,0 +1,11 @@
+<div class="post-item">
+  <div *ngFor="let todo of todos" class="list">
+    <p class="title"><span>Title : </span>{{ todo.title }}</p>
+    <p class="post-body" *ngIf="todo.completed">
+      <span>Completion :</span> <i class="fas fa-check"></i>
+    </p>
+    <p class="post-complete" *ngIf="!todo.completed">
+      <span>Completion :</span> <i class="fas fa-times"></i>
+    </p>
+  </div>
+</div>

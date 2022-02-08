@@ -1,0 +1,51 @@
+.post-item {
+  overflow: scroll;
+  width: 70%;
+  height: 400px;
+  margin: 20px auto;
+  padding: 0;
+}
+
+.post-title h2 {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 14px;
+  font-weight: lighter;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.list {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 30px;
+  padding-right: 30px;
+  flex-direction: row;
+  overflow: scroll;
+  padding-top: 10px;
+  border-bottom: 2px solid blue;
+  border-right: 2px solid blue;
+  border-radius: 8px;
+
+  .post-body {
+    float: left;
+  }
+
+  .post-complete {
+    float: right;
+  }
+
+  span {
+    color: blue;
+  }
+}
+
+.list:hover {
+  background-color: rgba(128, 128, 128, 0.062);
+}
+
+.fa-check {
+  color: greenyellow;
+}
+.fa-times {
+  color: red;
+}

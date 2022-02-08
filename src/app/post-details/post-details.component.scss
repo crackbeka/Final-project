@@ -1,0 +1,84 @@
+.comm-section {
+  width: 30%;
+  height: 400px;
+  margin: 20px auto;
+  margin-right: 20%;
+  padding-bottom: 20px;
+  overflow: scroll;
+}
+
+.comm-section img {
+  width: 150px;
+  height: 200px;
+}
+
+.body {
+  float: right;
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+  border: 2px solid grey;
+  border-radius: 8px;
+}
+.text {
+  width: 70%;
+  float: right;
+  margin-top: 20px;
+  padding-left: 20px;
+}
+.text h4 {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 20px;
+  color: rgb(52, 120, 221);
+}
+
+.text p {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 16px;
+}
+
+.add-comm {
+  width: 30%;
+  height: auto;
+  margin: 20px auto;
+  margin-right: 20%;
+  padding-bottom: 20px;
+  padding: 10px;
+}
+
+.add-comm img {
+  width: 150px;
+  height: 200px;
+}
+
+.add-comm h2 {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 18px;
+}
+
+.com-body {
+  border: 2px solid grey;
+  border-radius: 8px;
+}
+
+.com-inputs {
+  width: 60%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  float: right;
+}
+
+.com-inputs input {
+  width: 90%;
+  height: 30px;
+  border: none;
+  border-bottom: 2px solid grey;
+  border-radius: 8px;
+}
+
+.com-inputs label {
+  padding: 10px;
+  margin-top: 15px;
+  color: rgb(52, 120, 221);
+}

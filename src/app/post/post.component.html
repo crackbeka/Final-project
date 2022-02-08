@@ -1,0 +1,19 @@
+<button routerLink="addpost" class="btn btn-primary">Add Post</button>
+<div class="post-item">
+  <div class="post-header">
+    <div class="post-title">
+      <h2>Post's USER</h2>
+      <h2>TITLE</h2>
+      <h2>BODY</h2>
+    </div>
+    <div class="list">
+      <a *ngFor="let post of posts" routerLink="/details">
+        <h4 class="name">Leane Graham</h4>
+        <span class="title">{{ post.title }}</span>
+        <p class="post-body">{{ post.body }}</p>
+      </a>
+    </div>
+  </div>
+</div>
+
+<router-outlet></router-outlet>
