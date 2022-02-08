@@ -2,7 +2,7 @@
   overflow: scroll;
   width: 70%;
   height: 400px;
-  margin: 20px auto;
+  margin: 5rem auto;
   padding: 0;
 }
 
@@ -40,12 +40,14 @@
 }
 
 .list:hover {
-  background-color: rgba(128, 128, 128, 0.062);
+  background-color: rgba(128, 128, 128, 0.404);
 }
 
 .fa-check {
   color: greenyellow;
+  padding: 10px;
 }
 .fa-times {
   color: red;
+  padding: 10px;
 }
