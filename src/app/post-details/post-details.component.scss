@@ -61,6 +61,12 @@
   border-radius: 8px;
 }
 
+.btn {
+  width: 100px;
+  height: 40px;
+  margin-top: 10px;
+}
+
 .com-inputs {
   width: 60%;
   height: auto;
@@ -71,7 +77,7 @@
 
 .com-inputs input {
   width: 90%;
-  height: 30px;
+  height: 20px;
   border: none;
   border-bottom: 2px solid grey;
   border-radius: 8px;
@@ -79,6 +85,6 @@
 
 .com-inputs label {
   padding: 10px;
-  margin-top: 15px;
+  margin-top: 5px;
   color: rgb(52, 120, 221);
 }
