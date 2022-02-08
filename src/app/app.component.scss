@@ -32,9 +32,8 @@ header {
   font-size: larger;
 }
 
-.header-list ul li a:hover {
-  background-color: #01273e;
-  color: white;
+.class {
+  background-color: rgb(207, 35, 35);
   padding: 20px;
   border-radius: 8px;
   transition: 0.3s all ease;

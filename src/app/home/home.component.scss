@@ -6,3 +6,39 @@
   position: relative;
   z-index: -1;
 }
+
+.title {
+  width: 200px;
+  height: auto;
+  margin: 20px auto;
+}
+
+.title h1 {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 50px;
+  font-weight: bolder;
+  margin-top: 15%;
+  position: absolute;
+  z-index: 1;
+  color: white;
+}
+
+.title span {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 50px;
+  font-weight: bolder;
+  color: red;
+  position: absolute;
+  z-index: 1;
+}
+
+.title p {
+  font-family: "Times New Roman", Times, serif;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bolder;
+  margin-top: 18%;
+  position: absolute;
+  z-index: 1;
+  color: white;
+}
