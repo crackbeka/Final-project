@@ -1,3 +1,8 @@
+<div *ngIf="!editMode">VIEW</div>
+<div *ngIf="editMode">EDIT</div>
+
+<button (click)="startEdit()" type="button">Edit</button>
+
 <div class="comm-section">
   <div class="body" *ngFor="let detail of details">
     <img src="/assets/images/user.jpeg" />

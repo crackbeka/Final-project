@@ -1,6 +1,6 @@
 <div class="photo-album">
   <div *ngFor="let photo of photos" class="album-details">
-    <img src="/assets/images/namroud-gorguis-FZWivbri0Xk-unsplash.jpg" />
+    <img src="{{ photo.url }}" />
     <p><span>Title :</span> {{ photo.title }}</p>
   </div>
 </div>

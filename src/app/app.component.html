@@ -1,18 +1,29 @@
-<div class="logo">
-  <h1><a routerLink="/home">Angular Project</a></h1>
-  <div class="header-list">
-    <ul>
-      <li>
-        <a routerLink="/posts" routerLinkActive="class">Post </a>
-      </li>
-      <li>
-        <a routerLink="/albums" routerLinkActive="class">Album </a>
-      </li>
-      <li>
-        <a routerLink="/todos" routerLinkActive="class">Todos </a>
-      </li>
-    </ul>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" routerLink="/home">Angular Project</a>
+
+    <div class="ml-auto">
+      <ul class="navbar-nav me-auto mb-lg-0">
+        <li class="nav-item">
+          <a routerLink="/posts" class="nav-link" routerLinkActive="active">
+            Posts
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a routerLink="/albums" class="nav-link" routerLinkActive="active">
+            Albums
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a routerLink="/todos" class="nav-link" routerLinkActive="active">
+            Todos
+          </a>
+        </li>
+      </ul>
+    </div>
   </div>
-</div>
+</nav>
 
 <router-outlet></router-outlet>

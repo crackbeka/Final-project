@@ -1,19 +1,39 @@
-<form class="add-post">
-  <div class="mb-3">
-    <label class="form-label">Post Author</label>
-    <input type="text" class="form-control" />
-  </div>
-  <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Title</label>
-    <input type="text" class="form-control" />
-  </div>
+<div class="card mb-4">
+  <div class="card-header">Create Post</div>
 
-  <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Body </label>
-    <input type="text" class="form-control" />
-  </div>
+  <div class="card-body">
+    <form [formGroup]="form" (ngSubmit)="addPosts()">
+      <div class="mb-3">
+        <label for="author" class="form-label">Author</label>
+        <input
+          type="text"
+          formControlName="author"
+          class="form-control"
+          id="author"
+        />
+      </div>
 
-  <button (click)="addPosts()" type="submit" class="btn btn-primary">
-    Add
-  </button>
-</form>
+      <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input
+          type="text"
+          formControlName="title"
+          class="form-control"
+          id="title"
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="body" class="form-label">Body</label>
+        <textarea
+          class="form-control"
+          formControlName="body"
+          id="body"
+          rows="3"
+        ></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Create</button>
+    </form>
+  </div>
+</div>

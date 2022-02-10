@@ -1,18 +1,34 @@
-<button routerLink="addpost" class="btn btn-primary">Add Post</button>
-<router-outlet></router-outlet>
-<div class="post-item">
-  <div class="post-header">
-    <div class="post-title">
-      <h2>Post's USER</h2>
-      <h2>TITLE</h2>
-      <h2>BODY</h2>
+<div class="container-fluid bg-white">
+  <div class="container">
+    <div class="d-flex justify-content-center my-4">
+      <button (click)="toggleAddPost()" class="btn btn-secondary">
+        <em class="fa fa-plus"></em>
+        Add Post
+      </button>
     </div>
-    <div class="list">
-      <a *ngFor="let post of posts" routerLink="/details">
-        <h4 class="name">Leane Graham</h4>
-        <span class="title">{{ post.title }}</span>
-        <p class="post-body">{{ post.body }}</p>
-      </a>
-    </div>
+
+    <app-addpost *ngIf="showAddPost"></app-addpost>
+
+    <table class="table table-striped table-bordered">
+      <thead>
+        <tr>
+          <th>Author</th>
+          <th>Title</th>
+          <th colspan="2">Body</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let post of posts">
+          <td>Leane Graham</td>
+          <td>{{ post.title }}</td>
+          <td>{{ post.body }}</td>
+          <td>
+            <a [routerLink]="['/details', post.id]" class="btn btn-primary">
+              Details
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>

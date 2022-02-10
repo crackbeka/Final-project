@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AddpostComponent } from './addpost/addpost.component';
 import { AlbumDetailsComponent } from './album-details/album-details.component';
 import { PostDetailsComponent } from './post-details/post-details.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,12 @@ import { PostDetailsComponent } from './post-details/post-details.component';
     AlbumDetailsComponent,
     PostDetailsComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { DetailsService } from '../details.service';
 
 export interface Detail {
@@ -17,15 +18,30 @@ export interface Detail {
 })
 export class PostDetailsComponent implements OnInit {
   details!: Detail[];
+  comments!: any[];
+  editMode = false;
 
   constructor(
     private http: HttpClient,
-    private detailsService: DetailsService
+    private detailsService: DetailsService,
+    private route: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
-    this.detailsService.getDetails().subscribe((data) => {
-      this.details = data;
-    });
+    this.detailsService
+      .getDetails(this.route.snapshot.params.id)
+      .subscribe((data) => {
+        this.details = data;
+      });
+
+    this.detailsService
+      .getComments(this.route.snapshot.params.id)
+      .subscribe((data) => {
+        this.comments = data;
+      });
+  }
+
+  startEdit() {
+    this.editMode = true;
   }
 }

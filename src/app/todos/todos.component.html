@@ -1,11 +1,22 @@
-<div class="post-item">
-  <div *ngFor="let todo of todos" class="list">
-    <p class="title"><span>Title : </span>{{ todo.title }}</p>
-    <p class="post-body" *ngIf="todo.completed">
-      <span>Completion :</span> <i class="fas fa-check"></i>
-    </p>
-    <p class="post-complete" *ngIf="!todo.completed">
-      <span>Completion :</span> <i class="fas fa-times"></i>
-    </p>
-  </div>
+<div class="container mt-4">
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th colspan="2" class="d-flex justify-content-center">Completion</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let todo of todos">
+        <td>Title{{ todo.title }}</td>
+        <td *ngIf="todo.completed" class="d-flex justify-content-center">
+          <span>Completion :</span>
+          <i class="fas fa-check text-success"></i>
+        </td>
+        <td *ngIf="!todo.completed" class="d-flex justify-content-center">
+          <span>Completion :</span> <i class="fas fa-times text-danger"></i>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>

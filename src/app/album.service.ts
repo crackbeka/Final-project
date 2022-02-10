@@ -14,6 +14,8 @@ export class AlbumService {
   constructor(private http: HttpClient) {}
 
   getAlbums() {
-    return this.http.get<Album[]>('https://jsonplaceholder.typicode.com/posts');
+    return this.http.get<Album[]>(
+      'https://jsonplaceholder.typicode.com/albums'
+    );
   }
 }
