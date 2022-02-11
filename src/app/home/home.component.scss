@@ -44,11 +44,33 @@
   color: white;
 }
 
-.fa-solid {
-  width: 100px;
-  height: 100px;
-  color: black;
-  margin: auto;
+.icons {
+  width: 50%;
+  display: flex;
+  margin-top: 30%;
+  margin-left: 30%;
   position: absolute;
   z-index: 1;
+  cursor: pointer;
+
+  .icon-div {
+    width: 20%;
+    height: 200px;
+    background-color: #89bbbd;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    padding: 20px;
+  }
+
+  .icon-div img {
+    width: 80%;
+    height: 100px;
+    margin-left: 20px;
+  }
+
+  .icon-div h4 {
+    text-align: center;
+    margin-top: 20px;
+  }
 }
