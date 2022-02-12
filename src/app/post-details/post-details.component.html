@@ -1,33 +1,30 @@
-<div *ngIf="!editMode">VIEW</div>
+<div *ngIf="!editMode">view</div>
 <div *ngIf="editMode">EDIT</div>
 
 <button (click)="startEdit()" type="button">Edit</button>
 
 <div class="comm-section">
-  <div class="body" *ngFor="let detail of details">
+  <div class="body" *ngFor="let comm of comments">
     <img src="/assets/images/user.jpeg" />
     <div class="text">
       <h4>
-        {{ detail.name }}
+        {{ comm.name }}
       </h4>
 
       <p>
-        {{ detail.body }}
+        {{ comm.body }}
       </p>
     </div>
   </div>
 </div>
 
-<div class="add-comm">
-  <h2>Add Comment</h2>
-  <div class="com-body">
-    <img src="/assets/images/user.jpeg" />
-    <div class="com-inputs">
-      <label>Name </label>
-      <input type="text" />
-      <label>Body </label>
-      <input type="text" />
-      <button class="btn btn-primary">Add</button>
-    </div>
-  </div>
+<div class="d-flex justify-content-center my-4">
+  <button
+    (click)="toggleAddComments()"
+    class="btn btn-secondary"
+    style="width: 150px; height: 40px"
+  >
+    Add Comments
+  </button>
 </div>
+<app-addcomments *ngIf="showComments"></app-addcomments>

@@ -1,22 +1,32 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Detail } from './post-details/post-details.component';
+import { BehaviorSubject, Observable } from 'rxjs';
+
+export interface Detail {
+  postId: number;
+  id: number;
+  name: string;
+  email: string;
+  body: string;
+}
 
 @Injectable({
   providedIn: 'root',
 })
 export class DetailsService {
+  details$ = new BehaviorSubject<Detail[]>([]);
   constructor(private http: HttpClient) {}
 
-  getDetails(id: number) {
+  getComments(id: Detail[]) {
     return this.http.get<Detail[]>(
-      `https://jsonplaceholder.typicode.com/posts/${id}`
+      `https://jsonplaceholder.typicode.com/posts/${id}/comments`
     );
   }
 
-  getComments(id: number) {
-    return this.http.get<Detail[]>(
-      `https://jsonplaceholder.typicode.com/posts/${id}/comments`
+  addComments(detail: Detail): Observable<Detail[]> {
+    return this.http.post<Detail[]>(
+      'https://jsonplaceholder.typicode.com/comments',
+      detail
     );
   }
 }

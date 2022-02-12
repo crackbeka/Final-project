@@ -1,0 +1,29 @@
+<div class="d-flex m-auto card mb-4" style="width: 400px; height: auto">
+  <div class="card-header">Add Comment</div>
+
+  <div class="card-body">
+    <form [formGroup]="commentInputs" (ngSubmit)="addComments()">
+      <div class="mb-3">
+        <label for="author" class="form-label">Name</label>
+        <input
+          type="text"
+          formControlName="name"
+          class="form-control"
+          id="author"
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="body" class="form-label">Body</label>
+        <textarea
+          class="form-control"
+          formControlName="body"
+          id="body"
+          rows="3"
+        ></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Add</button>
+    </form>
+  </div>
+</div>

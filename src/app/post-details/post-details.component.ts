@@ -1,44 +1,52 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
-import { DetailsService } from '../details.service';
-
-export interface Detail {
-  postId: number;
-  id: number;
-  name: string;
-  email: string;
-  body: string;
-}
+import { Subscription } from 'rxjs';
+import { Detail, DetailsService } from '../details.service';
 
 @Component({
   selector: 'app-post-details',
   templateUrl: './post-details.component.html',
   styleUrls: ['./post-details.component.scss'],
 })
-export class PostDetailsComponent implements OnInit {
+export class PostDetailsComponent implements OnInit, OnDestroy {
   details!: Detail[];
   comments!: any[];
+
+  comms!: FormGroup;
+
   editMode = false;
+
+  showComments = false;
+
+  private subsComm!: Subscription;
 
   constructor(
     private http: HttpClient,
     private detailsService: DetailsService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private fb: FormBuilder
   ) {}
 
   ngOnInit(): void {
-    this.detailsService
-      .getDetails(this.route.snapshot.params.id)
-      .subscribe((data) => {
-        this.details = data;
-      });
-
     this.detailsService
       .getComments(this.route.snapshot.params.id)
       .subscribe((data) => {
         this.comments = data;
       });
+
+    this.subsComm = this.detailsService.details$.subscribe((data) => {
+      this.details = data;
+    });
+  }
+
+  toggleAddComments() {
+    this.showComments = !this.showComments;
+  }
+
+  ngOnDestroy(): void {
+    this.subsComm.unsubscribe;
   }
 
   startEdit() {

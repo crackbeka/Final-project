@@ -11,6 +11,7 @@ export class PostComponent implements OnInit, OnDestroy {
   posts!: Post[];
   objPosts!: Post[];
   showAddPost = false;
+
   private subscription!: Subscription;
 
   constructor(private postsService: PostService) {}
