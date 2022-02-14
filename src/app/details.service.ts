@@ -14,7 +14,7 @@ export interface Detail {
   providedIn: 'root',
 })
 export class DetailsService {
-  details$ = new BehaviorSubject<Detail[]>([]);
+  comments$ = new BehaviorSubject<Detail[]>([]);
   constructor(private http: HttpClient) {}
 
   getComments(id: Detail[]) {

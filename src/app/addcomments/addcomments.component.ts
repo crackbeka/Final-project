@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
 import { Detail, DetailsService } from '../details.service';
 
 @Component({
@@ -27,14 +28,16 @@ export class AddcommentsComponent implements OnInit {
 
   addComments() {
     if (this.commentInputs.valid) {
+      this.detailsService
+        .addComments(this.commentInputs.value)
+        .subscribe(() => {
+          this.detailsService.comments$.next([
+            this.commentInputs.value,
+            ...this.detailsService.comments$.value,
+          ]);
+        });
+    } else {
       return;
     }
-
-    this.detailsService.addComments(this.commentInputs.value).subscribe(() => {
-      this.detailsService.details$.next([
-        this.commentInputs.value,
-        ...this.detailsService.details$.value,
-      ]);
-    });
   }
 }

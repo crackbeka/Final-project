@@ -13,6 +13,7 @@ import { AlbumDetailsComponent } from './album-details/album-details.component';
 import { PostDetailsComponent } from './post-details/post-details.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AddcommentsComponent } from './addcomments/addcomments.component';
+import { ErrorPageComponent } from './error-page/error-page.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { AddcommentsComponent } from './addcomments/addcomments.component';
     AlbumDetailsComponent,
     PostDetailsComponent,
     AddcommentsComponent,
+    ErrorPageComponent,
   ],
   imports: [
     BrowserModule,

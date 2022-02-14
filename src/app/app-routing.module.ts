@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AddpostComponent } from './addpost/addpost.component';
 import { AlbumDetailsComponent } from './album-details/album-details.component';
 import { AlbumsComponent } from './albums/albums.component';
+import { ErrorPageComponent } from './error-page/error-page.component';
 import { HomeComponent } from './home/home.component';
 import { PostDetailsComponent } from './post-details/post-details.component';
 import { PostComponent } from './post/post.component';
@@ -52,6 +53,11 @@ const routes: Routes = [
     path: '',
     redirectTo: '/home',
     pathMatch: 'full',
+  },
+
+  {
+    path: '**',
+    component: ErrorPageComponent,
   },
 ];
 

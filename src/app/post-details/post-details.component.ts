@@ -11,8 +11,7 @@ import { Detail, DetailsService } from '../details.service';
   styleUrls: ['./post-details.component.scss'],
 })
 export class PostDetailsComponent implements OnInit, OnDestroy {
-  details!: Detail[];
-  comments!: any[];
+  comments!: Detail[];
 
   comms!: FormGroup;
 
@@ -30,14 +29,18 @@ export class PostDetailsComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
+    this.comms = this.fb.group({
+      name: ['', Validators.required],
+      body: ['', Validators.required],
+    });
     this.detailsService
       .getComments(this.route.snapshot.params.id)
       .subscribe((data) => {
         this.comments = data;
       });
 
-    this.subsComm = this.detailsService.details$.subscribe((data) => {
-      this.details = data;
+    this.subsComm = this.detailsService.comments$.subscribe((data) => {
+      this.comments = data;
     });
   }
 

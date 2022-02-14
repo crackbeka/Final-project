@@ -4,7 +4,7 @@
   <div class="card-body">
     <form [formGroup]="commentInputs" (ngSubmit)="addComments()">
       <div class="mb-3">
-        <label for="author" class="form-label">Name</label>
+        <label for="name" class="form-label">Name</label>
         <input
           type="text"
           formControlName="name"
@@ -19,11 +19,16 @@
           class="form-control"
           formControlName="body"
           id="body"
-          rows="3"
+          rows="2"
         ></textarea>
       </div>
 
-      <button type="submit" class="btn btn-primary">Add</button>
+      <button
+        type="submit"
+        class="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+      >
+        Add Comment
+      </button>
     </form>
   </div>
 </div>
